@@ -1,0 +1,55 @@
+To run the application, once the project is cloned from GitHub, take the following steps:
+
+#Project Dependencies
+- A Firebase account (for a database) provided at: https://firebase.google.com/
+
+
+#Using a predefined Firebase account
+- For the purposes of this project, a firebase account has been setup and the credentials you need / .env file that you need will be provided to you for a "plug-and-play" experience. Alternatively, you can setup your own account to test the database connectivity by following the steps below.
+
+
+#Setting up a Firebase account
+- Navigate to https://firebase.google.com/ from your favorite web browser.
+- Click the "Get Started" button and log in with a gmail account.
+- Once logged in, click on the "Create a project" button.
+- Give the project a relevant name. Accept the Firebase terms and click continue
+- Disabled Google Analytics as it is not relevant for this project and click on the "Create project" button.
+- Once the project is done being setup, click "Continue".
+- On the next page, under the sentance that says "Get started by adding Firebase to your app" there are 4 buttons. Select the button that looks like "</>". This allow you to create the credentials that allow a given app to connect to the services provided by Firebase.
+- Give the Web app a nickname like "url shortener evaluation" and click the "Register app".
+- You should now see connection information used to authenticate your app against Firebase. This information is used in the steps below so copy and paste this information into a notepad.
+- Click "Continue to console".
+- Back at the dashboard, click on the panel that says "Cloud Firestore".
+- Once this loads, click on the button "Create database".
+- Select "Start in test mode" and click "Next".
+- Select "nam5 (us-central)" in the dropdown for Cloud Firestore location and click the button "Enable".
+- Finally, in the Cloud Firstore dashboard, click on the link item "Start collection".
+- Name your collection "urlmaps" (this is currently hardcoded in the app so this is needs to be the name of the collection for now.
+- In the next window, create an initial record by clicking on the "Auto-ID" link in the Document ID textbox and then clicking the "Save" button.
+- Congratulations! Your Firebase account is now setup and ready to interact with the account.
+
+
+##As an alternative
+
+
+#To Begin
+1. Navigate to the root directory of the project from your preferred terminal.
+2. Run the command "yarn install" without quotes.
+
+
+#To Run Tests
+3. After the above steps have finished running, run the command "yarn test".
+
+
+#To Run the application
+4. Create a file named .env in the root folder of the project. 
+5. In the .env file, create the following entries:
+REACT_APP_FIREBASE_KEY="{firebaseConfig.apiKey}"
+REACT_APP_FIREBASE_DOMAIN="{firebaseConfig.authDomain}"
+REACT_APP_FIREBASE_PROJECT_ID="{firebaseConfig.projectId}"
+REACT_APP_FIREBASE_STORAGE_BUCKET="{firebaseConfig.storageBucket}"
+REACT_APP_FIREBASE_SENDER_ID="{messagingSenderId}"
+REACT_APP_MESSAGING_APP_ID="{firebaseConfig.appId}"
+[Note: Replace everything inside the double quotes in the listing above with the values you received from setting up your firebase account].
+6. Once all of the above is done, go back to your preferred terminal that is still pointing to the root folder for the project.
+7. From this directory, run the command "yarn start". This should start the application and allow you to test the functionality.
